@@ -4,357 +4,357 @@
 
 **1. Recurrent Neural Networks cheatsheet**
 
-&#10230;
+&#10230; Hoja de Referencia de Redes Neuronales Recurrentes
 
 <br>
 
 
 **2. CS 230 - Deep Learning**
 
-&#10230;
+&#10230; Aprendizaje Profundo
 
 <br>
 
 
 **3. [Overview, Architecture structure, Applications of RNNs, Loss function, Backpropagation]**
 
-&#10230;
+&#10230; [Vistazo, Estructura de la Arquitectura, Aplicación de RNNs, Función de pérdida, Retropropagación]
 
 <br>
 
 
 **4. [Handling long term dependencies, Common activation functions, Vanishing/exploding gradient, Gradient clipping, GRU/LSTM, Types of gates, Bidirectional RNN, Deep RNN]**
 
-&#10230;
+&#10230; [Manejando dependencias de largo plazo, Funciones comunes de activación, Gradiente desvaneciente/explosiva, Recortando la gradiente, GRU/LSTM, Tipos de compuertas]
 
 <br>
 
 
 **5. [Learning word representation, Notations, Embedding matrix, Word2vec, Skip-gram, Negative sampling, GloVe]**
 
-&#10230;
+&#10230; [Aprendiendo representación de la palabra, Notación, Matrices incrustadas, Word2vec, Skip-gram, Muestreo negativo, GloVe]
 
 <br>
 
 
 **6. [Comparing words, Cosine similarity, t-SNE]**
 
-&#10230;
+&#10230; [Comparando palabras, Similaridad Coseno, t-SNE]
 
 <br>
 
 
 **7. [Language model, n-gram, Perplexity]**
 
-&#10230;
+&#10230; [Modelo de lenguaje, n-gram, Perplejidad]
 
 <br>
 
 
 **8. [Machine translation, Beam search, Length normalization, Error analysis, Bleu score]**
 
-&#10230;
+&#10230; [Traducción de maquina, Búsqueda de rayo, Normalización de la longitud, Análisis de error, Puntaje Bleu]
 
 <br>
 
 
 **9. [Attention, Attention model, Attention weights]**
 
-&#10230;
+&#10230; [Atención, Modo de atención, Pesos de atención]
 
 <br>
 
 
 **10. Overview**
 
-&#10230;
+&#10230; [Vistazo]
 
 <br>
 
 
 **11. Architecture of a traditional RNN ― Recurrent neural networks, also known as RNNs, are a class of neural networks that allow previous outputs to be used as inputs while having hidden states. They are typically as follows:**
 
-&#10230;
+&#10230; Arquitectura de una RNN tradicional - Las redes neuronales recurrentes, también conocidas como RNNs, son una clase de redes neuronales que permiten el uso de salidas previas como entradas mientras se tienen estados ocultos. Estas son típicamente de la siguiente manera:  
 
 <br>
 
 
 **12. For each timestep t, the activation a<t> and the output y<t> are expressed as follows:**
 
-&#10230;
+&#10230; Para el tiempo t, la activación a<t> y la salidad y<t> son expresados de la siguiente manera:
 
 <br>
 
 
 **13. and**
 
-&#10230;
+&#10230; y
 
 <br>
 
 
 **14. where Wax,Waa,Wya,ba,by are coefficients that are shared temporally and g1,g2 activation functions.**
 
-&#10230;
+&#10230; donde Wax, Waa, Wya, ba, by son coeficientes que son compartidos temporalment y g1, g2 son funciones de activación.
 
 <br>
 
 
 **15. The pros and cons of a typical RNN architecture are summed up in the table below:**
 
-&#10230;
+&#10230; Las ventajas y desventajas de una arquitectura típica RNN son resumidas en la tabla de abajo:
 
 <br>
 
 
 **16. [Advantages, Possibility of processing input of any length, Model size not increasing with size of input, Computation takes into account historical information, Weights are shared across time]**
 
-&#10230;
+&#10230; [Ventajas, La posibilidad de procesamiento de entrada de cualquier longitud, El tamaño del modelo no incrementa con el tamaño de la entrada, El cálculo toma en cuenta información histórica, Los pesos son compartidos através del tiempo]
 
 <br>
 
 
 **17. [Drawbacks, Computation being slow, Difficulty of accessing information from a long time ago, Cannot consider any future input for the current state]**
 
-&#10230;
+&#10230; [Desventajas, El cálculo es lento, Dificultad para acceder a información de hace mucho tiempo atrás, No se puede considerar las entradas futuras para el estado actual]
 
 <br>
 
 
 **18. Applications of RNNs ― RNN models are mostly used in the fields of natural language processing and speech recognition. The different applications are summed up in the table below:**
 
-&#10230;
+&#10230; Aplicaciones de RNNs - Los modelos RNN son comúnmente usados en los campos del procesamiento de lenguaje natural y reconocimiento de discurso. Las diferentes aplicaciones son resumidas en la tabla de abajo:  
 
 <br>
 
 
 **19. [Type of RNN, Illustration, Example]**
 
-&#10230;
+&#10230; [Tipos de RNN, Ilustración, Ejemplo]
 
 <br>
 
 
 **20. [One-to-one, One-to-many, Many-to-one, Many-to-many]**
 
-&#10230;
+&#10230; [Uno-a-uno, uno-a-varios, Varios-a-uno, Varios-a-varios] 
 
 <br>
 
 
 **21. [Traditional neural network, Music generation, Sentiment classification, Name entity recognition, Machine translation]**
 
-&#10230;
+&#10230; [Redes neuronales tradicionales, Generación de música, Clasificación de sentimiento, Reconocimiento del nombre de entidad, traducción de maquina]
 
 <br>
 
 
 **22. Loss function ― In the case of a recurrent neural network, the loss function L of all time steps is defined based on the loss at every time step as follows:**
 
-&#10230;
+&#10230; Función de pérdida - En el caso de una red neuronal recurrente, la función de pérdida L de todos los pasos temporales es definida basada en la pérdida en cada paso temporal como sigue:
 
 <br>
 
 
 **23. Backpropagation through time ― Backpropagation is done at each point in time. At timestep T, the derivative of the loss L with respect to weight matrix W is expressed as follows:**
 
-&#10230;
+&#10230; Retropropagación através del tiempo - La retropropagación es hecha en cada punto en el tiempo. En el paso temporal T, la derivada de la pérdida L con respecto a la matriz de peso W es expresada como sigue:
 
 <br>
 
 
 **24. Handling long term dependencies**
 
-&#10230;
+&#10230; Manejando las dependencias de largo plazo
 
 <br>
 
 
 **25. Commonly used activation functions ― The most common activation functions used in RNN modules are described below:**
 
-&#10230;
+&#10230; Funciones de activación comúnmente usadas - La función de activación más comúnmente usada en módulos RNN son descritas abajo:
 
 <br>
 
 
 **26. [Sigmoid, Tanh, RELU]**
 
-&#10230;
+&#10230; Sigmoide, Tanh, RELU
 
 <br>
 
 
 **27. Vanishing/exploding gradient ― The vanishing and exploding gradient phenomena are often encountered in the context of RNNs. The reason why they happen is that it is difficult to capture long term dependencies because of multiplicative gradient that can be exponentially decreasing/increasing with respect to the number of layers.**
 
-&#10230;
+&#10230; Gradiente desvaneciente/explosiva - Los fenómenos de la gradiente desvaneciente y explosiva se encuentran en el contexto de RNNs. La razón porqué suceden es que es difícil capturar las dependencias de largo plazo debido al gradiente multiplicativo que puede ser exponencialmente decreciente/creciente con respecto al número de capas.
 
 <br>
 
 
 **28. Gradient clipping ― It is a technique used to cope with the exploding gradient problem sometimes encountered when performing backpropagation. By capping the maximum value for the gradient, this phenomenon is controlled in practice.**
 
-&#10230;
+&#10230; Recorte de la gradiente - Es una técnica usada para lidiar con el problema de la gradiente explosiva que a veces de encuentra cuando se realiza la retropropagación. Truncando el máximo valor de la gradiente, este fenómeno es controlado en la práctica.
 
 <br>
 
 
 **29. clipped**
 
-&#10230;
+&#10230; Recortado
 
 <br>
 
 
 **30. Types of gates ― In order to remedy the vanishing gradient problem, specific gates are used in some types of RNNs and usually have a well-defined purpose. They are usually noted Γ and are equal to:**
 
-&#10230;
+&#10230; Tipos de compuertas - Para remediar el problema de la gradiente desvaneciente, compuertas específicas son usadas en algunos tipos de RNNs y usualmente tienen un propósito bien definido. Estos son usualmente denotados Γ y son iguales a:
 
 <br>
 
 
 **31. where W,U,b are coefficients specific to the gate and σ is the sigmoid function. The main ones are summed up in the table below:**
 
-&#10230;
+&#10230; donde W,U,b son coeficientes específicos a la compuerta y σ es la función sigmoide. Los principales son resumidos en la tabla de abajo:
 
 <br>
 
 
 **32. [Type of gate, Role, Used in]**
 
-&#10230;
+&#10230; [Tipos de compuerta, Rol, Usado en]
 
 <br>
 
 
 **33. [Update gate, Relevance gate, Forget gate, Output gate]**
 
-&#10230;
+&#10230; [Compuerta de actualización, Compuerta de relevancia, Compuerta de salida]
 
 <br>
 
 
 **34. [How much past should matter now?, Drop previous information?, Erase a cell or not?, How much to reveal of a cell?]**
 
-&#10230;
+&#10230; [Cuánto pasado debe importar ahora?, Deshechamos información previa? Eliminamos una célula o no? Cuánto revelar de una célula?]
 
 <br>
 
 
 **35. [LSTM, GRU]**
 
-&#10230;
+&#10230; [LSTM, GRU]
 
 <br>
 
 
 **36. GRU/LSTM ― Gated Recurrent Unit (GRU) and Long Short-Term Memory units (LSTM) deal with the vanishing gradient problem encountered by traditional RNNs, with LSTM being a generalization of GRU. Below is a table summing up the characterizing equations of each architecture:**
 
-&#10230;
+&#10230; GRU/LSTM - La Unidad Recurrente con Compuerta (GRU) y unidad de Memoria de Largo-Corto Plazo lidian con el problema del desvanecimiento de la gradiente encontrado en las RNNs tradicionales, donde LSTM es la generalización de GRU. Debajo esta la tabla que resume las ecuaciones que caracterizan cada arquitectura:
 
 <br>
 
 
 **37. [Characterization, Gated Recurrent Unit (GRU), Long Short-Term Memory (LSTM), Dependencies]**
 
-&#10230;
+&#10230; [Caracterización, nidad Recurrente con Compuerta, Memoria de Largo-Corto Plazo, Dependencias]
 
 <br>
 
 
 **38. Remark: the sign ⋆ denotes the element-wise multiplication between two vectors.**
 
-&#10230;
+&#10230; Nota: el signo * denota la multiplicación elemento a elemento entre dos vectores.
 
 <br>
 
 
 **39. Variants of RNNs ― The table below sums up the other commonly used RNN architectures:**
 
-&#10230;
+&#10230; Variantes de RNNs - La tabla de abajo resume las otras arquitecturas RNN comúnmente usadas:
 
 <br>
 
 
 **40. [Bidirectional (BRNN), Deep (DRNN)]**
 
-&#10230;
+&#10230; [Bidireccional (BRNN), Profunda (DRNN)]
 
 <br>
 
 
 **41. Learning word representation**
 
-&#10230;
+&#10230; Aprendiendo representación de la palabra
 
 <br>
 
 
 **42. In this section, we note V the vocabulary and |V| its size.**
 
-&#10230;
+&#10230; En esta sección, denotamos V al vocabulario y |V| su tamaño.
 
 <br>
 
 
 **43. Motivation and notations**
 
-&#10230;
+&#10230; Motivación y notaciones
 
 <br>
 
 
 **44. Representation techniques ― The two main ways of representing words are summed up in the table below:**
 
-&#10230;
+&#10230; Técnicas de representación - Las dos formas principales de representación de palabras son resumidas en la tabla de abajo:
 
 <br>
 
 
 **45. [1-hot representation, Word embedding]**
 
-&#10230;
+&#10230; [Representación 1-hot, Incrustamiento de palabra]
 
 <br>
 
 
 **46. [teddy bear, book, soft]**
 
-&#10230;
+&#10230; [oso teddy, libro, suave]
 
 <br>
 
 
 **47. [Noted ow, Naive approach, no similarity information, Noted ew, Takes into account words similarity]**
 
-&#10230;
+&#10230; [Denotada ow, Enfoque ingenuo, información de no similaridad, Denotada ew, Toma en cuenta la similitud de palabras]
 
 <br>
 
 
 **48. Embedding matrix ― For a given word w, the embedding matrix E is a matrix that maps its 1-hot representation ow to its embedding ew as follows:**
 
-&#10230;
+&#10230; Matriz de incrustamiento - Para una palabra dada w, la matrix de incrustamiento E es la matrix que mapea su representación 1-hot ow a su incrustamiento ew como sigue:
 
 <br>
 
 
 **49. Remark: learning the embedding matrix can be done using target/context likelihood models.**
 
-&#10230;
+&#10230; Nota: aprender la matrix de incrustamiento puede ser hecha usandose modelos de verosimilitud objetivo/contexto.
 
 <br>
 
 
 **50. Word embeddings**
 
-&#10230;
+&#10230; Incrustamiento de palabra
 
 <br>
 
 
 **51. Word2vec ― Word2vec is a framework aimed at learning word embeddings by estimating the likelihood that a given word is surrounded by other words. Popular models include skip-gram, negative sampling and CBOW.**
 
-&#10230;
+&#10230; Word2vec - Word2vec es un marco 
 
 <br>
 
@@ -672,6 +672,6 @@ Given the symmetry that e and θ play in this model, the final word embedding e(
 
 **96. By X and Y**
 
-&#10230;
+&#10230; 
 
 <br>
